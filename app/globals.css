@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  --font-body:    'Inter', ui-sans-serif, system-ui;
+}
+
+html, body {
+  background: #07090d;
+  color: #e6edf3;
+  font-family: var(--font-body);
+  min-height: 100vh;
+}
+
+/* Subtle grid background */
+body {
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(45, 212, 164, 0.04), transparent 40%),
+    radial-gradient(circle at 80% 90%, rgba(192, 132, 252, 0.04), transparent 40%),
+    linear-gradient(180deg, #06080c 0%, #07090d 100%);
+  background-attachment: fixed;
+}
+
+/* Hexagonal mesh texture overlay on panels */
+.hex-mesh {
+  background-image:
+    linear-gradient(30deg, rgba(255, 255, 255, 0.012) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.012) 87.5%, rgba(255, 255, 255, 0.012)),
+    linear-gradient(150deg, rgba(255, 255, 255, 0.012) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.012) 87.5%, rgba(255, 255, 255, 0.012)),
+    linear-gradient(30deg, rgba(255, 255, 255, 0.012) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.012) 87.5%, rgba(255, 255, 255, 0.012)),
+    linear-gradient(150deg, rgba(255, 255, 255, 0.012) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.012) 87.5%, rgba(255, 255, 255, 0.012));
+  background-size: 32px 56px;
+  background-position: 0 0, 0 0, 16px 28px, 16px 28px;
+}
+
+/* Clean scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #0d1117; }
+::-webkit-scrollbar-thumb { background: #1e2732; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #2d3748; }
+
+/* Select dropdown styling */
+select {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237d8590' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 2rem;
+}
+
+/* Pulse animation for live indicator */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(45, 212, 164, 0.6); }
+  50%      { opacity: 0.85; box-shadow: 0 0 0 8px rgba(45, 212, 164, 0); }
+}
+.pulse-live { animation: pulse-dot 2s ease-in-out infinite; }
+
+@keyframes pulse-warn {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.6); }
+  50%      { opacity: 0.85; box-shadow: 0 0 0 8px rgba(251, 191, 36, 0); }
+}
+.pulse-warn { animation: pulse-warn 2s ease-in-out infinite; }
+
+/* Fade-in for chart panels */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fade-up 0.5s ease-out both; }
+
+/* Numeric ticker effect */
+.tabular-nums { font-variant-numeric: tabular-nums; }

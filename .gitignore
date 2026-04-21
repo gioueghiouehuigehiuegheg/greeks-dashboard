@@ -1,0 +1,17 @@
+node_modules
+.next
+.vercel
+out
+build
+dist
+
+.env
+.env.local
+.env.*.local
+tokens.json
+tokens.lock
+
+.DS_Store
+*.log
+*.tsbuildinfo
+next-env.d.ts
