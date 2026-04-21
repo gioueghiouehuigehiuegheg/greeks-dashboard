@@ -110,3 +110,4 @@ Risk-free rate defaults to 4.5% — edit in `app/api/chain/route.ts` if you want
 ## Credits
 
 Engine ported from [rreidriddle/black-scholes-greeks-dashboard](https://github.com/rreidriddle/black-scholes-greeks-dashboard) by Reid Riddle. Visual style inspired by MarketMono.
+# greeks-dashboard
